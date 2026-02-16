@@ -1,26 +1,88 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+  /* NIWAX EXACT HERO */
+  --header-gradient: linear-gradient(
+    90deg,
+    #cfd9e8 0%,
+    #d7e2ee 25%,
+    #e8dccb 55%,
+    #e3d6ea 80%,
+    #d9d8ef 100%
+  );
+
+  --text-light: #0b1b3f;
+  --text-dark: #0b1b3f;
+  --underline-light: #6d28d9;
+  --underline-dark: #6d28d9;
+
+  --hero-btn: linear-gradient(90deg,#ff8a4c 0%,#ff5ea8 100%);
+  --hero-btn-hover: linear-gradient(90deg,#ff7a3d 0%,#ff4f97 100%);
+
+  --btn-gradient: linear-gradient(90deg,#6d28d9 0%,#38bdf8 100%);
+  --btn-hover: linear-gradient(90deg,#5b21b6 0%,#2563eb 100%);
+
+  --phone-gradient: linear-gradient(90deg,#ec4899 0%,#9333ea 100%);
+  --yellow: #fbbf24;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+
+
+
+.btn-niwax {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px;
+  padding: 14px 40px;
+  font-weight: 600;
+  color: white;
+  background: var(--btn-gradient);
+  transition: all 0.35s ease-in-out;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.btn-niwax::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+.btn-niwax:hover {
+  background: var(--btn-hover);
+}
+
+.btn-niwax:hover::before {
+  transform: translateX(120%);
+}
+
+.btn-hero {
+  background: var(--hero-btn);
+}
+
+.btn-hero:hover {
+  background: var(--hero-btn-hover);
+}
+
+
+@keyframes slideCards {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-cards {
+  animation: slideCards 18s linear infinite;
 }
