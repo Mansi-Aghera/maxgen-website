@@ -402,9 +402,126 @@
 // }
 
 
+// "use client";
+
+// import { useState } from "react";
+// import HeroCard from "../ui/HeroCard";
+
+// export default function Hero() {
+//   const [open, setOpen] = useState(false);
+
+//   return (
+//     <>
+//       <section
+//         className="relative flex items-center pt-24 sm:pt-28 lg:pt-32 overflow-hidden min-h-[90vh] lg:min-h-screen text-[var(--text-dark)]"
+//         style={{ background: "var(--header-gradient)" }}
+//       >
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
+          
+//           {/* LEFT SIDE */}
+//           <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
+            
+//             {/* MAIN HEADING */}
+//             <h1 className="font-extrabold leading-[1.05] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#0b1b3f]">
+//               WEB.<br />
+//               MOBILE.<br />
+//               GRAPHIC.<br />
+//               MARKETING.
+//             </h1>
+
+//             <p className="text-sm sm:text-base md:text-lg max-w-xl mx-auto lg:mx-0 text-slate-600">
+//               <span className="text-[var(--yellow)] font-semibold">
+//                 Website and App development
+//               </span>{" "}
+//               solution for transforming and innovating businesses.
+//             </p>
+
+//             <div className="pt-2">
+//               <button className="btn-niwax btn-hero mt-4 sm:mt-6">
+//                 View Case Studies →
+//               </button>
+//             </div>
+
+//             {/* STATS */}
+//             <div className="pt-4 flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2 text-xs sm:text-sm text-slate-500">
+//               <span>1000+ High Growth</span>
+//               <span>Clutch Top 1000</span>
+//               <span>Google 5★ Rating</span>
+//             </div>
+//           </div>
+
+//           {/* RIGHT SIDE SLIDER */}
+//           <div className="relative w-full overflow-hidden">
+//             <div className="flex gap-6 sm:gap-8 animate-cards w-max">
+              
+//               <HeroCard
+//                 title="VR Solution"
+//                 image="/vr.png"
+//                 gradient="linear-gradient(180deg,#3b82f6 0%,#7c3aed 100%)"
+//               />
+//               <HeroCard
+//                 title="Custom App Solution"
+//                 image="/app.png"
+//                 gradient="linear-gradient(180deg,#ec4899 0%,#9333ea 100%)"
+//               />
+//               <HeroCard
+//                 title="Startup Solution"
+//                 image="/startup.png"
+//                 gradient="linear-gradient(180deg,#14b8a6 0%,#0ea5e9 100%)"
+//               />
+
+//               {/* duplicate for loop */}
+//               <HeroCard
+//                 title="VR Solution"
+//                 image="/vr.png"
+//                 gradient="linear-gradient(180deg,#3b82f6 0%,#7c3aed 100%)"
+//               />
+//               <HeroCard
+//                 title="Custom App Solution"
+//                 image="/app.png"
+//                 gradient="linear-gradient(180deg,#ec4899 0%,#9333ea 100%)"
+//               />
+//               <HeroCard
+//                 title="Startup Solution"
+//                 image="/startup.png"
+//                 gradient="linear-gradient(180deg,#14b8a6 0%,#0ea5e9 100%)"
+//               />
+//             </div>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* VIDEO MODAL */}
+//       {open && (
+//         <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 px-4">
+//           <div className="relative w-full max-w-4xl">
+//             <button
+//               onClick={() => setOpen(false)}
+//               className="absolute -top-8 right-0 text-white text-xl sm:text-2xl"
+//             >
+//               ✕
+//             </button>
+
+//             <div className="aspect-video">
+//               <iframe
+//                 className="w-full h-full rounded-xl"
+//                 src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+//                 title="Video"
+//                 allowFullScreen
+//               />
+//             </div>
+//           </div>
+//         </div>
+//       )}
+//     </>
+//   );
+// }
+
+
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import HeroCard from "../ui/HeroCard";
 
 export default function Hero() {
@@ -419,39 +536,82 @@ export default function Hero() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
           
           {/* LEFT SIDE */}
-          <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
+          <motion.div
+            initial="hidden"
+            animate="show"
+            variants={{
+              hidden: {},
+              show: { transition: { staggerChildren: 0.15 } },
+            }}
+            className="space-y-6 sm:space-y-8 text-center lg:text-left"
+          >
             
-            {/* MAIN HEADING */}
-            <h1 className="font-extrabold leading-[1.05] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#0b1b3f]">
+            {/* HEADING */}
+            <motion.h1
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                show: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+              className="font-extrabold leading-[1.05] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#0b1b3f]"
+            >
               WEB.<br />
               MOBILE.<br />
               GRAPHIC.<br />
               MARKETING.
-            </h1>
+            </motion.h1>
 
-            <p className="text-sm sm:text-base md:text-lg max-w-xl mx-auto lg:mx-0 text-slate-600">
+            {/* TEXT */}
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                show: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
+              className="text-sm sm:text-base md:text-lg max-w-xl mx-auto lg:mx-0 text-slate-600"
+            >
               <span className="text-[var(--yellow)] font-semibold">
                 Website and App development
               </span>{" "}
               solution for transforming and innovating businesses.
-            </p>
+            </motion.p>
 
-            <div className="pt-2">
+            {/* BUTTON */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, scale: 0.9 },
+                show: { opacity: 1, scale: 1 },
+              }}
+              transition={{ duration: 0.45 }}
+              className="pt-2"
+            >
               <button className="btn-niwax btn-hero mt-4 sm:mt-6">
                 View Case Studies →
               </button>
-            </div>
+            </motion.div>
 
             {/* STATS */}
-            <div className="pt-4 flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2 text-xs sm:text-sm text-slate-500">
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                show: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.5 }}
+              className="pt-4 flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-2 text-xs sm:text-sm text-slate-500"
+            >
               <span>1000+ High Growth</span>
               <span>Clutch Top 1000</span>
               <span>Google 5★ Rating</span>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
-          {/* RIGHT SIDE SLIDER */}
-          <div className="relative w-full overflow-hidden">
+          {/* RIGHT SIDE CARDS */}
+          <motion.div
+            initial={{ opacity: 0, x: 80 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+            className="relative w-full overflow-hidden"
+          >
             <div className="flex gap-6 sm:gap-8 animate-cards w-max">
               
               <HeroCard
@@ -470,7 +630,7 @@ export default function Hero() {
                 gradient="linear-gradient(180deg,#14b8a6 0%,#0ea5e9 100%)"
               />
 
-              {/* duplicate for loop */}
+              {/* duplicate */}
               <HeroCard
                 title="VR Solution"
                 image="/vr.png"
@@ -487,14 +647,23 @@ export default function Hero() {
                 gradient="linear-gradient(180deg,#14b8a6 0%,#0ea5e9 100%)"
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* VIDEO MODAL */}
       {open && (
-        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 px-4">
-          <div className="relative w-full max-w-4xl">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 px-4"
+        >
+          <motion.div
+            initial={{ scale: 0.85, y: 40 }}
+            animate={{ scale: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="relative w-full max-w-4xl"
+          >
             <button
               onClick={() => setOpen(false)}
               className="absolute -top-8 right-0 text-white text-xl sm:text-2xl"
@@ -510,8 +679,8 @@ export default function Hero() {
                 allowFullScreen
               />
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       )}
     </>
   );

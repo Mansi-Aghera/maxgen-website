@@ -286,10 +286,10 @@ export default function Navbar() {
 
   const navItems = [
     { name: "HOME+", path: "/" },
-    { name: "PAGES+", path: "/pages" },
-    { name: "SHORTCODES+", path: "/shortcodes" },
+    { name: "SERVICES+", path: "/pages" },
     { name: "PORTFOLIO+", path: "/portfolio" },
     { name: "BLOG+", path: "/blog" },
+    { name: "LIST+", path: "/list" },
   ];
 
   return (
