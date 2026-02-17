@@ -271,11 +271,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Button from "./ui/Button";
+import ContactDrawer from "./ui/ContactDrawer";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+const [contactOpen, setContactOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 80);
@@ -345,9 +347,9 @@ export default function Navbar() {
             ☎
           </div>
 
-          <Button href="/contact" size="md">
-            Request A Quote
-          </Button>
+          <Button onClick={() => setContactOpen(true)}>
+  Request A Quote
+</Button>
         </div>
 
         {/* MOBILE TOGGLE */}
@@ -381,6 +383,10 @@ export default function Navbar() {
           ))}
         </div>
       </div>
+      <ContactDrawer
+  open={contactOpen}
+  onClose={() => setContactOpen(false)}
+/>
     </nav>
   );
 }

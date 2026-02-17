@@ -73,6 +73,43 @@
   background: var(--hero-btn-hover);
 }
 
+.niwax-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 12px 0;
+  outline: none;
+  font-size: 15px;
+  transition: border 0.3s;
+}
+
+.niwax-input:focus {
+  border-bottom: 1px solid #ec4899;
+}
+
+.niwax-submit {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px;
+  padding: 14px 40px;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(90deg,#ffb38a,#ec4899);
+  transition: all 0.35s ease-in-out;
+}
+
+.niwax-submit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg,rgba(255,255,255,0.35),transparent);
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+.niwax-submit:hover::before {
+  transform: translateX(120%);
+}
 
 @keyframes slideCards {
   0% {
