@@ -113,6 +113,7 @@
 
 import { motion } from "framer-motion";
 import ServicesSection from "./ServicesSection";
+import Button from "../ui/Button";
 
 export default function AgencySection() {
   return (
@@ -167,9 +168,9 @@ export default function AgencySection() {
           Hire a <span className="font-bold">Dedicated Developer</span>
         </h3>
 
-        <button className="btn-niwax btn-hero">
-          Hire Now →
-        </button>
+       <Button variant="hero" size="md">
+         Hire Now →
+       </Button>
       </motion.div>
     </section>
   );

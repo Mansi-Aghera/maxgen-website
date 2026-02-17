@@ -523,6 +523,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import HeroCard from "../ui/HeroCard";
+import Button from "../ui/Button";
 
 export default function Hero() {
   const [open, setOpen] = useState(false);
@@ -585,9 +586,9 @@ export default function Hero() {
               transition={{ duration: 0.45 }}
               className="pt-2"
             >
-              <button className="btn-niwax btn-hero mt-4 sm:mt-6">
-                View Case Studies →
-              </button>
+              <Button variant="hero" size="lg">
+  View Case Studies →
+</Button>
             </motion.div>
 
             {/* STATS */}

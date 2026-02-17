@@ -23,12 +23,12 @@ const clients: Client[] = [
   { logo: "/clients-11.png", name: "Tom N Jerry", country: "UK" },
   { logo: "/clients-12.png", name: "Arch", country: "India" },
 
-  { logo: "/clients-13.png", name: "Aro Group", country: "India" },
-  { logo: "/clients-14.png", name: "Tom Group", country: "India" },
-  { logo: "/clients-15.png", name: "Premier Pipes", country: "India" },
-  { logo: "/clients-16.png", name: "Dynamic", country: "India" },
-  { logo: "/clients-17.png", name: "Fns Inc", country: "India" },
-  { logo: "/clients-18.png", name: "RP School", country: "India" },
+  // { logo: "/clients-13.png", name: "Aro Group", country: "India" },
+  // { logo: "/clients-14.png", name: "Tom Group", country: "India" },
+  // { logo: "/clients-15.png", name: "Premier Pipes", country: "India" },
+  // { logo: "/clients-16.png", name: "Dynamic", country: "India" },
+  // { logo: "/clients-17.png", name: "Fns Inc", country: "India" },
+  // { logo: "/clients-18.png", name: "RP School", country: "India" },
 ];
 
 function ClientCard({ client, index }: { client: Client; index: number }) {

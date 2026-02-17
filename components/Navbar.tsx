@@ -95,7 +95,6 @@
 //   );
 // }
 
-
 // "use client";
 
 // import { useEffect, useState } from "react";
@@ -140,7 +139,7 @@
 
 //       {/* NAV CONTAINER */}
 //       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        
+
 //         {/* LOGO */}
 //         <Link href="/" className="flex items-center">
 //           <Image
@@ -265,13 +264,13 @@
 //   );
 // }
 
-
 "use client";
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Button from "./ui/Button";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -307,7 +306,6 @@ export default function Navbar() {
       )}
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        
         {/* LOGO */}
         <Link href="/" className="flex items-center">
           <Image
@@ -324,10 +322,7 @@ export default function Navbar() {
         <ul className="hidden lg:flex items-center gap-8 xl:gap-10 font-semibold tracking-wide">
           {navItems.map((item) => (
             <li key={item.name} className="relative group">
-              <Link
-                href={item.path}
-                className="text-[#0b1b3f]"
-              >
+              <Link href={item.path} className="text-[#0b1b3f]">
                 {item.name}
               </Link>
 
@@ -350,9 +345,9 @@ export default function Navbar() {
             ☎
           </div>
 
-          <Link href="/contact">
-            <button className="btn-niwax">Request A Quote</button>
-          </Link>
+          <Button href="/contact" size="md">
+            Request A Quote
+          </Button>
         </div>
 
         {/* MOBILE TOGGLE */}
