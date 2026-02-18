@@ -10,14 +10,23 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 pb-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         {/* COL 1 */}
         <div>
-          <h2 className="text-[34px] font-black text-[#0b1b3f] mb-6">NIWAX</h2>
+          <Link href="/" className="flex items-center">
+          <img
+            src="/logo.png"
+            alt="MaxGen"
+            width={120}
+            height={50}
+            className="w-30 sm:w-34 lg:w-[100px] h-auto mb-8"
+          />
+        </Link>
 
           <p className="text-slate-600 leading-relaxed mb-8">
-            News letter dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt. Enter your email
+            Maxgen Technologies Pvt. Ltd. (MNC), with locations in Pune, Navi Mumbai, Ahmedabad is your top choice.
           </p>
 
-          <button className="btn-niwax">Become Partner →</button>
+          <button className="btn-niwax"><Link href="/contact">
+                Contact Us →
+              </Link></button>
         </div>
 
         {/* COL 2 */}
@@ -26,31 +35,35 @@ export default function Footer() {
             Contact Us
           </h3>
 
-          <div className="space-y-5 text-slate-600">
-            <div className="flex gap-4">
-              <Mail size={20} className="text-slate-500 mt-1" />
-              <div>
-                <p className="font-semibold text-[#0b1b3f]">Email</p>
-                <p>info@businessname.com</p>
-              </div>
-            </div>
+         <div className="space-y-5 text-slate-600">
+  <div className="flex items-start gap-4">
+    <Mail size={20} className="text-slate-500 mt-1 shrink-0" />
+    <div>
+      <p className="font-semibold text-[#0b1b3f]">Email</p>
+      <p>ahmedabad@maxgentechnologies.com</p>
+    </div>
+  </div>
 
-            <div className="flex gap-4">
-              <Phone size={20} className="text-slate-500 mt-1" />
-              <div>
-                <p className="font-semibold text-[#0b1b3f]">Phone</p>
-                <p>+1 0000 000 000</p>
-              </div>
-            </div>
+  <div className="flex items-start gap-4">
+    <Phone size={20} className="text-slate-500 mt-1 shrink-0" />
+    <div>
+      <p className="font-semibold text-[#0b1b3f]">Phone</p>
+      <p>+91 9099039845</p>
+    </div>
+  </div>
 
-            <div className="flex gap-4">
-              <MapPin size={20} className="text-slate-500 mt-1" />
-              <div>
-                <p className="font-semibold text-[#0b1b3f]">Address</p>
-                <p>123 Business Centre London SW1A 1AA</p>
-              </div>
-            </div>
-          </div>
+  <div className="flex items-start gap-4">
+    <MapPin size={20} className="text-slate-500 mt-1 shrink-0" />
+    <div>
+      <p className="font-semibold text-[#0b1b3f]">Address</p>
+      <p>
+        Abhijeet 3, 603, Netaji Rd, near Pantaloons,
+        Mithakhali, Ellisbridge, Ahmedabad, Gujarat 380006
+      </p>
+    </div>
+  </div>
+</div>
+
         </div>
 
         {/* COL 3 */}
