@@ -286,11 +286,11 @@ const [contactOpen, setContactOpen] = useState(false);
   }, []);
 
   const navItems = [
-    { name: "HOME+", path: "/" },
-    { name: "SERVICES+", path: "/services" },
-    { name: "PORTFOLIO+", path: "/portfolio" },
-    { name: "BLOG+", path: "/blog" },
-    { name: "LIST+", path: "/list" },
+    { name: "HOME", path: "/" },
+    { name: "SERVICES", path: "/services" },
+    { name: "PORTFOLIO", path: "/portfolio" },
+    { name: "BLOG", path: "/blog" },
+    { name: "LIST", path: "/list" },
   ];
 
   return (

@@ -123,3 +123,114 @@
 .animate-cards {
   animation: slideCards 18s linear infinite;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  /* 🔤 font size utility */
+  .fs-45 {
+    font-size: 45px;
+  }
+ 
+  /* 📏 line height utility */
+  .lh-57 {
+    line-height: 57px;
+  }
+}
+.inputStyle {
+  @apply border-b border-gray-300 focus:border-pink-500 outline-none py-3 bg-transparent w-full;
+}
+ 
+.submitBtn {
+  @apply w-full mt-6 py-4 text-white font-semibold rounded-full
+  bg-gradient-to-r from-[#ffb58a] via-[#ff7ca8] to-[#ff3c8d]
+  shadow-md hover:opacity-90 transition;
+}
+ 
+:root {
+ 
+  /* NIWAX EXACT HERO */
+  --header-gradient: linear-gradient(
+    90deg,
+    #cfd9e8 0%,
+    #d7e2ee 25%,
+    #e8dccb 55%,
+    #e3d6ea 80%,
+    #d9d8ef 100%
+  );
+ 
+  --text-light: #0b1b3f;
+  --text-dark: #0b1b3f;
+  --underline-light: #6d28d9;
+  --underline-dark: #6d28d9;
+ 
+  --hero-btn: linear-gradient(90deg,#ff8a4c 0%,#ff5ea8 100%);
+  --hero-btn-hover: linear-gradient(90deg,#ff7a3d 0%,#ff4f97 100%);
+ 
+  --btn-gradient: linear-gradient(90deg,#6d28d9 0%,#38bdf8 100%);
+  --btn-hover: linear-gradient(90deg,#5b21b6 0%,#2563eb 100%);
+ 
+  --phone-gradient: linear-gradient(90deg,#ec4899 0%,#9333ea 100%);
+  --yellow: #fbbf24;
+}
+ 
+ 
+ 
+ 
+ 
+.btn-niwax {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px;
+  padding: 14px 40px;
+  font-weight: 600;
+  color: white;
+  background: var(--btn-gradient);
+  transition: all 0.35s ease-in-out;
+}
+ 
+.btn-niwax::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+ 
+.btn-niwax:hover {
+  background: var(--btn-hover);
+}
+ 
+.btn-niwax:hover::before {
+  transform: translateX(120%);
+}
+ 
+.btn-hero {
+  background: var(--hero-btn);
+}
+ 
+.btn-hero:hover {
+  background: var(--hero-btn-hover);
+}
+ 
+ 
+@keyframes slideCards {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+ 
+.animate-cards {
+  animation: slideCards 18s linear infinite;
+}
+ 
+ 
