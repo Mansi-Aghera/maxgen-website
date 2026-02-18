@@ -516,7 +516,6 @@ export default function Page() {
         bg2="/keyboard1.jpg"
       />
  
-      <StatsSection />
  
       {/* 🔥 SERVICE OVERVIEW SECTION (inline) */}
       <motion.section
@@ -1061,7 +1060,8 @@ export default function Page() {
       {/* NEWSLETTER */}
       <News variants={fadeUp} />
  
-      \
+            <StatsSection />
+
  
     </main>
   );
