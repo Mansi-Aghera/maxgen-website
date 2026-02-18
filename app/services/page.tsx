@@ -1055,12 +1055,12 @@ export default function Page() {
         </motion.div>
       </motion.section>
  
- 
+             <StatsSection />
+
  
       {/* NEWSLETTER */}
       <News variants={fadeUp} />
  
-            <StatsSection />
 
  
     </main>
