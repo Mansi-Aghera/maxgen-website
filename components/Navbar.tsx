@@ -290,7 +290,6 @@ const [contactOpen, setContactOpen] = useState(false);
     { name: "SERVICES", path: "/services" },
     { name: "PORTFOLIO", path: "/portfolio" },
     { name: "BLOG", path: "/blog" },
-    { name: "LIST", path: "/list" },
   ];
 
   return (
