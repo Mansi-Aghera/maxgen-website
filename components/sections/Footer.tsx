@@ -1,27 +1,23 @@
 "use client";
 
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
     <footer className="bg-[#f6f7fb] pt-[90px]">
       {/* TOP */}
       <div className="max-w-7xl mx-auto px-6 pb-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-        
         {/* COL 1 */}
         <div>
-          <h2 className="text-[34px] font-black text-[#0b1b3f] mb-6">
-            NIWAX
-          </h2>
+          <h2 className="text-[34px] font-black text-[#0b1b3f] mb-6">NIWAX</h2>
 
           <p className="text-slate-600 leading-relaxed mb-8">
             News letter dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt. Enter your email
           </p>
 
-          <button className="btn-niwax">
-            Become Partner →
-          </button>
+          <button className="btn-niwax">Become Partner →</button>
         </div>
 
         {/* COL 2 */}
@@ -59,26 +55,44 @@ export default function Footer() {
 
         {/* COL 3 */}
         <div>
-          <h3 className="text-[22px] font-bold text-[#0b1b3f] mb-6">
-            Company
-          </h3>
+          <h3 className="text-[22px] font-bold text-[#0b1b3f] mb-6">Company</h3>
 
           <ul className="space-y-3 text-slate-600">
-            <li className="hover:text-pink-500 cursor-pointer">Contact</li>
-            <li className="hover:text-pink-500 cursor-pointer">
-              Customer's FAQ
+            <li>
+              <Link href="/contact" className="hover:text-pink-500 transition">
+                Contact Us
+              </Link>
             </li>
-            <li className="hover:text-pink-500 cursor-pointer">
-              Refund Policy
+
+            <li>
+              <Link
+                href="/faqs#customer-faq"
+                className="hover:text-pink-500 transition"
+              >
+                Customer's FAQ
+              </Link>
             </li>
-            <li className="hover:text-pink-500 cursor-pointer">
-              Privacy Policy
+
+            <li>
+              <Link
+                href="/privacy-policy"
+                className="hover:text-pink-500 transition"
+              >
+                Privacy Policy
+              </Link>
             </li>
-            <li className="hover:text-pink-500 cursor-pointer">
-              Terms and Conditions
+            <li>
+              <Link
+                href="/terms-and-conditions"
+                className="hover:text-pink-500 transition"
+              >
+                Terms and Conditions
+              </Link>
             </li>
-            <li className="hover:text-pink-500 cursor-pointer">
-              License & Copyright
+            <li>
+              <Link href="/licence" className="hover:text-pink-500 transition">
+                License & Copyright
+              </Link>
             </li>
           </ul>
         </div>
@@ -132,7 +146,6 @@ export default function Footer() {
       {/* BADGES */}
       <div className="border-t border-gray-200 py-12">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
-          
           <div>
             <h3 className="text-[26px] font-bold text-[#0b1b3f] mb-3">
               Top App Development Companies
